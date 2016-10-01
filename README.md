@@ -14,3 +14,8 @@ New problem: `import-mailbox-to-gmail` has no resume import. If something goes w
 
 Try this: use a EC2 instace.
 
+## Problem 2: Discard imap folder
+
+I don't want to tranfer the IMAP folder into GMail labels.
+
+Solution: replace [this line](https://github.com/google/import-mailbox-to-gmail/blob/master/import-mailbox-to-gmail.py#L223) with `metadata_object = {}`.
