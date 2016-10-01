@@ -8,5 +8,9 @@ We want to properly import the sent mails, since we want to have conversation vi
 
 Gmail determines what email is a "sent one" by reading the `From` header ([read more](https://developers.google.com/gmail/api/guides/labels)). `import-mailbox-to-gmail` uses [`import()`](https://developers.google.com/gmail/api/v1/reference/users/messages/import) to get the mails from the mbox file into Gmail. Import is generally very useful, it does some checks like spam or that duplicates are detected. However, when using `import()`, the `From` header is not read correctly.
 
-Solution: use [`insert()`](https://developers.google.com/gmail/api/v1/reference/users/messages/insert). It is more low level (similar to `IMAP APPEND`) and header (including `From`) are read correctly. In code [`import()` can simply replaced by `insert()`](https://github.com/google/import-mailbox-to-gmail/blob/master/import-mailbox-to-gmail.py#L233).
+Solution: use [`insert()`](https://developers.google.com/gmail/api/v1/reference/users/messages/insert). It is more low level (similar to `IMAP APPEND`) and header (including `From`) are read correctly. In code [`import()` can simply replaced by `insert()`](https://github.com/google/import-mailbox-to-gmail/blob/master/import-mailbox-to-gmail.py#L233). That will work.
+
+New problem: `import-mailbox-to-gmail` has no resume import. If something goes wrong you will need to start form the beginning. Spoiler: import happens one-by-one and is very slooooow. With `import()` restarting is no problem, duplicates are detected. With `insert()` they are not, you end up with duplicates. It's didn't made it importing (or better inserting) my some-thousand sent mails.
+
+Try this: use a EC2 instace.
 
