@@ -14,6 +14,8 @@ New problem: `import-mailbox-to-gmail` has no resume import. If something goes w
 
 Try this: use a EC2 instace.
 
+*Update:* The speed issue comes from the GMail API, it's the same on EC2 and Google Compute Engine. Importing an email takes ~5sec, one API call. Importing 10000 mails take 13 hours. Still, cloud servers are the way to go.
+
 ## Problem 2: Discard imap folder
 
 I don't want to tranfer the IMAP folder into GMail labels.
