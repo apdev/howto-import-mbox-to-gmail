@@ -1,4 +1,4 @@
-# how-to-import-mbox-to-gmail
+# How to import a big mbox file to Gmail
 
 ## Scenario
 
