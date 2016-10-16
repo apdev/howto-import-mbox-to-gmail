@@ -40,7 +40,7 @@ sudo apt-get install awscli
 aws configure
 ```
 
-Will prompt for AccessID and Secret, make sure that this user has read/write access from/to your S3 backup bucket. Will also prompt for the region.
+Will prompt for Access Key ID and Secret Access Key, make sure that this user has read/write access from/to your S3 backup bucket. Will also prompt for the region.
 
 ### Start copy
 
