@@ -4,7 +4,7 @@
 
 My hoster allows to create a zip file of all IMAP folders to be downloaded from my ftp webspace. This zip file is 3GB (~70000 mails).
 
-Importing this mail to Gmail takes very long (TODO link) and there is no resume feature, so importing is not feasible from a local machine. Instead I use a EC2 instance.
+Importing this amount of mails [takes very long](https://github.com/google/import-mailbox-to-gmail/issues/19) and there is no resume feature, so importing is not feasible from a local machine. Instead I use a EC2 instance.
 
 ## Setup EC2 instance
 
