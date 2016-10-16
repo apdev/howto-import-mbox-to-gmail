@@ -16,8 +16,7 @@ SSH into your EC2 instance.
 
 ```bash
 $ ftp
-ftp> open <your_ftp_server>
-# will prompt to username and password
+ftp> open <your_ftp_server> # will prompt to username and password
 ftp> passive # enter passive mode, otherwise stuff broke for be
 ftp> dir # show directory
 ftp> get <your_archive_filename>
@@ -39,7 +38,7 @@ sudo apt-get install awscli
 
 ```bash
 aws configure
-``` 
+```
 
 Will prompt for AccessID and Secret, make sure that this user has read/write access from/to your S3 backup bucket. Will also prompt for the region.
 
@@ -47,18 +46,20 @@ Will prompt for AccessID and Secret, make sure that this user has read/write acc
 
 ```bash
 aws s3 cp <your_mailbox_archive> s3://<your_bucket>/<your_mailbox_archive>
-``` 
+```
 
 To later copy archive to machine use:
 
 ```bash
 aws s3 cp s3://<your_bucket>/<your_mailbox_archive> <your_mailbox_archive> 
-``` 
+```
 
 # Install [`import-mailbox-to-gmail`](https://github.com/google/import-mailbox-to-gmail)
+
+I suggest you make yourself familar with `import-mailbox-to-gmail` on your local machine.
 
 ```bash
 sudo apt-get update
 sudo apt-get install python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev # otherwise PyOpenSSL install failed
 sudo pip install --upgrade google-api-python-client PyOpenSSL
-``` 
+```
